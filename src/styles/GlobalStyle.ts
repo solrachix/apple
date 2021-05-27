@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import { rgba } from 'polished'
+import { createGlobalStyle } from "styled-components";
+import { rgba } from "polished";
 
 export default createGlobalStyle`
   * {
@@ -8,67 +8,13 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   html, body, #__next {
-    min-width: 99.6vw;
-    min-height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
 
-    background: ${props => props.theme.colors.background.normal};
-    color: ${props => props.theme.colors.text.normal};
+    background: ${(props) => props.theme.colors.background.normal};
+    color: ${(props) => props.theme.colors.text.light};
 
     overflow-x: visible;
-  }
-
-  body {
-    /* background: ${props => props.theme.colors.background.normal};
-     &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-
-      background-image: url("/images/neon2.jpg");
-      background-size: cover;
-      background-attachment: fixed;
-
-      z-index: -1;
-      opacity: 0.58;
-    } */
-  }
-  #__next {
-    display: flex;
-
-    /* background: ${props => rgba(props.theme.colors.background.dark, 0.4)};
-    backdrop-filter: blur(20px); */
-
-    .tabbar {
-      display: none;
-    }
-
-    @media (max-width: 600px) {
-      .tabbar {
-        display: block;
-      }
-      .sidebar {
-        display: none;
-      }
-    }
-
-    &.navbar-false {
-      /* grid-template-columns: 100%;
-      grid-template-rows: 100%;
-      grid-template-areas:
-        'content';
-
-      @media (max-width: 600px) {
-        grid-template-columns: 100%;
-        grid-template-rows: 100%;
-        grid-template-areas:
-          'content';
-      } */
-    }
   }
 
   @media (max-width: 1088px){
@@ -89,13 +35,11 @@ export default createGlobalStyle`
     outline: none;
 
     text-decoration: none;
-    // font: 400 1rem 'Nunito', 'Roboto', sans-serif;
-    font-family: 'Nunito', 'Roboto', sans-serif;
+    font-family: Poppins, 'Roboto', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    color: ${({ theme }) => theme.colors.text.normal};
-    font-family: 'Source Serif Pro', serif;
-    /* font-family: 'Nunito', 'Roboto', sans-serif; */
+    color: ${({ theme }) => theme.colors.text.light};
+    font-family: Poppins, sans-serif;
   }
   button {
     cursor: pointer;
@@ -118,4 +62,4 @@ export default createGlobalStyle`
     background: ${({ theme }) => rgba(theme.colors.background.lighter, 1)};
     border-radius: 50px;
   }
-`
+`;
