@@ -1,5 +1,5 @@
-import { Container } from "./styles";
+import { Container } from './styles'
 
 export default function Header() {
-  return <Container></Container>;
+  return <Container></Container>
 }

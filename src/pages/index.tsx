@@ -1,10 +1,10 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import React, { ReactElement } from "react";
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import React, { ReactElement } from 'react'
 
-import SEO from "@/components/SEO";
-import Mac from "@/components/Mac";
-import Header from "@/components/Header";
-import { Container } from "@/styles/pages/Home";
+import SEO from '@/components/SEO'
+import Mac from '@/components/Mac'
+import Header from '@/components/Header'
+import { Container } from '@/styles/pages/Home'
 
 // interface HomeStaticProps {
 //   ogImage: string
@@ -24,7 +24,7 @@ export default function Home(): ReactElement {
       </main>
       <Mac />
     </Container>
-  );
+  )
 }
 
 // export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
