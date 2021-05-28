@@ -51,8 +51,9 @@ export const Container = styled.div`
         h1 {
           position: absolute;
 
+          color: ${(props) => props.theme.colors.background.darker};
           font-size: 8rem;
-          z-index: 0;
+          z-index: -1;
         }
         h2 {
           font-size: 2.4rem;
@@ -105,15 +106,17 @@ export const Container = styled.div`
 
   @media (max-width: 720px) {
     main {
-      .swiper-slide {
-        grid-template-columns: 100%;
-        grid-template-rows: auto auto;
+      .swiper-container {
+        .swiper-slide {
+          grid-template-columns: 100%;
+          grid-template-rows: auto auto;
 
-        .mockup {
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
+          .mockup {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
         }
       }
     }
