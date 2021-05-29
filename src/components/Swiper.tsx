@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
 import SwiperCore, {
   Navigation,
@@ -8,19 +8,20 @@ import SwiperCore, {
   Mousewheel,
   A11y,
   SwiperOptions
-} from 'swiper'
+} from "swiper";
 
-import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
-import 'swiper/swiper.min.css'
+import { Swiper as SwiperComponent, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
 
 // install Swiper modules
-SwiperCore.use([Navigation, Pagination, Scrollbar, Mousewheel, A11y])
+SwiperCore.use([Navigation, Pagination, Scrollbar, Mousewheel, A11y]);
 
 interface SwiperProps extends SwiperOptions {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
-export { SwiperSlide }
+export { SwiperSlide };
 
 const Swiper = React.forwardRef(
   ({ children, ...props }: SwiperProps, ref): React.ReactElement => {
@@ -41,8 +42,8 @@ const Swiper = React.forwardRef(
       >
         {children}
       </SwiperComponent>
-    )
+    );
   }
-)
+);
 
-export default Swiper
+export default Swiper;
