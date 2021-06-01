@@ -1,16 +1,16 @@
-import React, { ReactElement, Suspense, useState } from "react";
+import React, { ReactElement, Suspense, useState } from 'react'
 
-import { Canvas } from "@react-three/fiber";
-import { Environment, ContactShadows } from "@react-three/drei";
-import { useSpring } from "@react-spring/core";
+import { Canvas } from '@react-three/fiber'
+import { Environment, ContactShadows } from '@react-three/drei'
+import { useSpring } from '@react-spring/core'
 
-import Model from "./Model";
-import { Container } from "./styles";
+import Model from './Model'
+import { Container } from './styles'
 
 export default function Mac({ ...props }): ReactElement {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   // We turn this into a spring animation that interpolates between 0 and 1
-  const spring = useSpring({ open: Number(open) });
+  const spring = useSpring({ open: Number(open) })
 
   return (
     <Container
@@ -23,8 +23,8 @@ export default function Mac({ ...props }): ReactElement {
         <Suspense fallback={null}>
           <mesh
             rotation={[0, Math.PI, 0]}
-            onPointerOver={(e) => setOpen(true)}
-            onPointerOut={(e) => setOpen(false)}
+            onPointerOver={() => setOpen(true)}
+            onPointerOut={() => setOpen(false)}
             // onClick={(e) => {
             //   e.stopPropagation();
             //   setOpen(!open);
@@ -48,5 +48,5 @@ export default function Mac({ ...props }): ReactElement {
         />
       </Canvas>
     </Container>
-  );
+  )
 }

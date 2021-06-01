@@ -18,6 +18,9 @@ const devices = [
   { name: 'Mac', Mockup: Mac },
   { name: 'Iphone', Mockup: Iphone }
 ]
+
+// https://sketchfab.com/
+
 export default function Home({ items }: HomeProps): ReactElement {
   return (
     <Container>
@@ -54,10 +57,6 @@ export default function Home({ items }: HomeProps): ReactElement {
                     <a href="/#">Ler mais</a>
                   </div>
                 </div>
-                {/* {devices.reduce((_, { name, Mockup }) => {
-                return name === item.deviceName && <Mockup className="mockup" />
-              })} */}
-
                 <device.Mockup className="mockup" />
               </SwiperSlide>
             )

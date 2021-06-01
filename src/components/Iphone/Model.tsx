@@ -14,29 +14,16 @@ export default function Model({ open, ...props }): React.ReactElement {
   // Make it float in the air when it's opened
   useFrame(state => {
     const t = state.clock.getElapsedTime()
-    state.camera.position.lerp(vec.set(0, 0, 3), 0.1)
+    state.camera.position.lerp(vec.set(0, 0, 2), 0.1)
     state.camera.lookAt(0, 0, 0)
-    // group.current.rotation.x = THREE.MathUtils.lerp(
-    //   group.current.rotation.x,
-    //   open ? Math.cos(t / 2) / 8 + 0.25 : 0,
-    //   0.1
-    // )
-    // group.current.rotation.y = THREE.MathUtils.lerp(
-    //   group.current.rotation.y,
-    //   open ? Math.sin(t / 4) / 4 : 0,
-    //   0.1
-    // )
-    // group.current.rotation.z = THREE.MathUtils.lerp(
-    //   group.current.rotation.z,
-    //   open ? Math.sin(t / 4) / 4 : 0,
-    //   0.1
-    // )
 
+    // rotations
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
-      Math.cos(t / 2) / 8 + 1,
+      open ? Math.cos(t / 2) / 8 + 2 : 1.5,
       0.1
     )
+
     group.current.rotation.y = THREE.MathUtils.lerp(
       group.current.rotation.y,
       Math.sin(t / 4) / 60,
@@ -44,9 +31,11 @@ export default function Model({ open, ...props }): React.ReactElement {
     )
     group.current.rotation.z = THREE.MathUtils.lerp(
       group.current.rotation.z,
-      Math.sin(t / 4) / 4,
+      open ? Math.sin(t / 4) / 20 : 3,
       0.1
     )
+
+    // positions
     group.current.position.y = THREE.MathUtils.lerp(
       group.current.position.y,
       (-1 + Math.sin(t)) / 6,

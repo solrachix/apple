@@ -1,7 +1,7 @@
 import React, { ReactElement, Suspense, useState } from 'react'
 
 import { Canvas } from '@react-three/fiber'
-import { Environment, ContactShadows } from '@react-three/drei'
+import { ContactShadows, OrbitControls } from '@react-three/drei'
 import { useSpring } from '@react-spring/core'
 
 import Model from './Model'
@@ -14,10 +14,21 @@ export default function Mac({ ...props }): ReactElement {
 
   return (
     <Container {...props}>
-      <Canvas dpr={[0, 1]} camera={{ position: [0, 0, 0], fov: 35 }}>
+      <Canvas camera={{ position: [0, 0, 0], fov: 35 }}>
+        <directionalLight position={[10, 10, 5]} intensity={2} />
+        <directionalLight position={[-10, -10, -5]} intensity={1} />
+        <OrbitControls />
+
         <Suspense fallback={null}>
-          <Model open={open} />
+          <mesh
+            rotation={[0, Math.PI, 0]}
+            onPointerOver={() => setOpen(true)}
+            onPointerOut={() => setOpen(false)}
+          >
+            <Model open={open} />
+          </mesh>
         </Suspense>
+
         <ContactShadows
           rotation-x={Math.PI / 2}
           position={[0, -4.5, 0]}
