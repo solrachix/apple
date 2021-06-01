@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   flex: 1;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 
     background: linear-gradient(
       180deg,
-      ${(props) => props.theme.colors.background.light},
+      ${props => props.theme.colors.background.light},
       transparent
     );
     backdrop-filter: blur(10px);
@@ -56,15 +56,14 @@ export const Container = styled.div`
           width: 1rem;
           height: 1rem;
 
-          background: ${(props) => props.theme.colors.text.light};
-          color: ${(props) => props.theme.colors.red};
+          background: ${props => props.theme.colors.text.light};
+          color: ${props => props.theme.colors.red};
 
           &.swiper-pagination-bullet-active {
-            background: ${(props) => props.theme.colors.text.light};
+            background: ${props => props.theme.colors.text.light};
           }
         }
       }
-      margin-top: 2rem;
 
       .swiper-slide {
         padding: 3rem;
@@ -81,7 +80,7 @@ export const Container = styled.div`
           position: absolute;
           top: 1rem;
 
-          color: ${(props) => props.theme.colors.text.light};
+          color: ${props => props.theme.colors.text.light};
           font-size: 8rem;
           line-height: 8rem;
 
@@ -93,7 +92,7 @@ export const Container = styled.div`
         }
         span {
           font-size: 1.4rem;
-          color: ${(props) => props.theme.colors.red};
+          color: ${props => props.theme.colors.red};
         }
         p {
           margin-top: 2rem;
@@ -116,12 +115,12 @@ export const Container = styled.div`
 
             /* font-size: 1.2rem; */
 
-            background: ${(props) => props.theme.colors.primary.normal};
+            background: ${props => props.theme.colors.primary.normal};
             border-radius: 10rem;
             border: none;
           }
           a {
-            color: ${(props) => props.theme.colors.primary.dark};
+            color: ${props => props.theme.colors.primary.dark};
           }
         }
 
@@ -155,4 +154,4 @@ export const Container = styled.div`
       }
     }
   }
-`;
+`
