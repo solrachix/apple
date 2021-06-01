@@ -14,9 +14,9 @@ export default function Mac({ ...props }): ReactElement {
 
   return (
     <Container {...props}>
-      <Canvas dpr={[0, 1]} camera={{ position: [0, 0, 0], fov: 25 }}>
+      <Canvas dpr={[0, 1]} camera={{ position: [0, 0, 0], fov: 35 }}>
         <Suspense fallback={null}>
-          <Model open={open} hinge={spring.open.to([0, 1], [1.575, -0.425])} />
+          <Model open={open} />
         </Suspense>
         <ContactShadows
           rotation-x={Math.PI / 2}

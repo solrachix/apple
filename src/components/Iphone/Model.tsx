@@ -7,33 +7,49 @@ import { useGLTF } from '@react-three/drei'
 
 const vec = new THREE.Vector3()
 
-export default function Model({ open, hinge, ...props }) {
+export default function Model({ open, ...props }): React.ReactElement {
   const group = useRef<GroupProps>()
   const { nodes, materials } = useGLTF('/images/3dObjects/iPhone12Pro.glb')
 
   // Make it float in the air when it's opened
   useFrame(state => {
     const t = state.clock.getElapsedTime()
-    state.camera.position.lerp(vec.set(0, 0, open ? -24 : -32), 0.1)
+    state.camera.position.lerp(vec.set(0, 0, 3), 0.1)
     state.camera.lookAt(0, 0, 0)
+    // group.current.rotation.x = THREE.MathUtils.lerp(
+    //   group.current.rotation.x,
+    //   open ? Math.cos(t / 2) / 8 + 0.25 : 0,
+    //   0.1
+    // )
+    // group.current.rotation.y = THREE.MathUtils.lerp(
+    //   group.current.rotation.y,
+    //   open ? Math.sin(t / 4) / 4 : 0,
+    //   0.1
+    // )
+    // group.current.rotation.z = THREE.MathUtils.lerp(
+    //   group.current.rotation.z,
+    //   open ? Math.sin(t / 4) / 4 : 0,
+    //   0.1
+    // )
+
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
-      open ? Math.cos(t / 2) / 8 + 0.25 : 0,
+      Math.cos(t / 2) / 8 + 1,
       0.1
     )
     group.current.rotation.y = THREE.MathUtils.lerp(
       group.current.rotation.y,
-      open ? Math.sin(t / 4) / 4 : 0,
+      Math.sin(t / 4) / 60,
       0.1
     )
     group.current.rotation.z = THREE.MathUtils.lerp(
       group.current.rotation.z,
-      open ? Math.sin(t / 4) / 4 : 0,
+      Math.sin(t / 4) / 4,
       0.1
     )
     group.current.position.y = THREE.MathUtils.lerp(
       group.current.position.y,
-      open ? (-2 + Math.sin(t)) / 3 : -4.3,
+      (-1 + Math.sin(t)) / 6,
       0.1
     )
   })
