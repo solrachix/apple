@@ -3,8 +3,10 @@ import React, { ReactElement } from 'react'
 
 import SEO from '@/components/SEO'
 import Swiper, { SwiperSlide } from '@/components/Swiper'
+import MacBook from '@/components/MacBook'
 import Mac from '@/components/Mac'
 import Iphone from '@/components/Iphone'
+import Ipad from '@/components/Ipad'
 import Header from '@/components/Header'
 import { Container } from '@/styles/pages/Home'
 
@@ -15,8 +17,10 @@ interface HomeStaticProps {
 type HomeProps = InferGetStaticPropsType<GetStaticProps<HomeStaticProps>>
 
 const devices = [
+  { name: 'MacBook', Mockup: MacBook },
   { name: 'Mac', Mockup: Mac },
-  { name: 'Iphone', Mockup: Iphone }
+  { name: 'Iphone', Mockup: Iphone },
+  { name: 'Ipad', Mockup: Ipad }
 ]
 
 // https://sketchfab.com/
@@ -74,6 +78,14 @@ export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
       items: [
         {
           title: 'MacBook Pro',
+          description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ad,
+          voluptatibus delectus totam saepe incidunt velit sunt beatae
+          enim dolorem? Vel facere odio animi reprehenderit tempora quo
+          ipsa deserunt minus!`,
+          deviceName: 'MacBook'
+        },
+        {
+          title: 'Imac Pro',
           description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ad,
           voluptatibus delectus totam saepe incidunt velit sunt beatae
           enim dolorem? Vel facere odio animi reprehenderit tempora quo
