@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <a href="https://github.com/solrachix/apple">
-    <img alt="apple Logo" src="https://github.com/solrachix/apple/blob/main/public/images/icons/logo.svg?raw=true" width="25%" />
+    <img alt="apple Logo" src="https://github.com/solrachix/apple/blob/master/public/images/icons/logo.svg?raw=true" width="25%" />
   </a>
 </h1>
 
@@ -19,7 +19,7 @@
   <a aria-label="Completed" href="https://nextlevelweek.com/episodios/omnistack/edicao/2">
     <img src="https://img.shields.io/badge/apple-23.04.21-171719?style=for-the-badge&labelColor=171719"></img>
   </a>
-  <a href="https://github.com/solrachix/apple/commits/main">
+  <a href="https://github.com/solrachix/apple/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/solrachix/apple?style=for-the-badge&label=last%20commit:&labelColor=171719&color=171719">
   </a>
   <img alt="License" src="https://img.shields.io/badge/license-MIT-171719?style=for-the-badge&labelColor=171719&color=171719">
@@ -29,7 +29,7 @@
   </a>
 </p>
 <p align="center">
-    <img alt="Apple Demostration" src="https://github.com/solrachix/apple/blob/main/public/demostration.gif?raw=true" />
+    <img alt="Apple Demostration" src="https://github.com/solrachix/apple/blob/master/public/demostration.gif?raw=true" />
 </p>
 
 ---
